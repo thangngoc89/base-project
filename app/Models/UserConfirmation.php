@@ -1,9 +1,9 @@
 <?php
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use App\Library\Helpers\Uuid\UuidModel;
 
-class UserConfirmation extends Model
+class UserConfirmation extends UuidModel
 {
     public function user()
     {

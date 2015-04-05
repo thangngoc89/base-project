@@ -16,7 +16,8 @@ class CreateUserConfirmationsTable extends Migration {
 		{
             $table->string('id',32)->index()->unique();
             $table->primary('id');
-            $table->string('user_id',32)->index()->unique();
+            $table->string('user_id',32)->index();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 			$table->timestamps();
 		});
 	}
