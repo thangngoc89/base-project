@@ -59,10 +59,13 @@ class SendConfirmationEmail implements ShouldBeQueued
      */
     public function sendConfimationEmail($confirmation_code, $user)
     {
-        $this->mail->send('emails.confirmation', compact('confirmation_code'), function ($message) use ($user) {
+        $username = $user->username;
+        $data = compact('confirmation_code', 'username');
+
+        $this->mail->send('emails.confirmation', $data, function ($message) use ($user) {
             //TODO: Change this to a app's setting
             $message->from('hi@example.com', 'Khoa Nguyen');
-            $message->to($user->email);
+            $message->to($user->email)->subject('Confirm Your Email Address');;
         });
     }
 

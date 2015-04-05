@@ -23,7 +23,7 @@ class User extends UuidModel implements AuthenticatableContract, CanResetPasswor
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['name', 'email', 'password'];
+	protected $fillable = ['name', 'username', 'email', 'password'];
 
 	/**
 	 * The attributes excluded from the model's JSON form.
@@ -32,6 +32,11 @@ class User extends UuidModel implements AuthenticatableContract, CanResetPasswor
 	 */
 	protected $hidden = ['password', 'remember_token'];
 
+    /**
+     * User Confirmation Code relationship
+     * 
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
     public function confirmation()
     {
         return $this->hasOne(\App\Models\UserConfirmation::class);

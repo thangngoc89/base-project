@@ -15,14 +15,14 @@ Route::get('/', 'WelcomeController@index');
 
 Route::get('home', 'HomeController@index');
 
-Route::controllers([
-	'auth' => 'Auth\AuthController',
-	'password' => 'Auth\PasswordController',
-]);
-
 Route::group(['prefix' => 'auth'], function(){
    Route::get('verify/{code}', [
         'as' => 'register.verify',
         'uses' => 'Auth\AuthController@verify'
    ]);
 });
+
+Route::controllers([
+    'auth' => 'Auth\AuthController',
+    'password' => 'Auth\PasswordController',
+]);
