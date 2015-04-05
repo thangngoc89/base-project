@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers\Auth;
 
+use App\Events\Auth\UserRegistration;
 use App\Http\Controllers\Controller;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\Auth\Registrar;
@@ -66,8 +67,12 @@ class AuthController extends Controller
             );
         }
 
-        $this->auth->login($this->registrar->create($request->all()));
+        $user = $this->registrar->create($request->all());
 
-        return redirect($this->redirectPath());
+        event(new UserRegistration($user));
+
+//        $this->auth->login($this->registrar->create($request->all()));
+        return 'Your account have been created. Please check your email for confirmation!';
+//        return redirect($this->redirectPath());
     }
 }
