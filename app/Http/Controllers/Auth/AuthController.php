@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers\Auth;
 
+use App\Commands\Auth\UserConfirm;
 use App\Events\Auth\UserRegistration;
 use App\Http\Controllers\Controller;
 use Illuminate\Contracts\Auth\Guard;
@@ -47,7 +48,9 @@ class AuthController extends Controller
      */
     public function verify($code)
     {
-        dd($code);
+        $command = new UserConfirm($code);
+
+        return $this->dispatch($command);
     }
 
     /**
