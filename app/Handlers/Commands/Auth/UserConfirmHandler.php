@@ -36,12 +36,16 @@ class UserConfirmHandler
 
         $userConfirmation = UserConfirmation::find($code);
 
-        if (is_null($userConfirmation))
-        {
-            return trans('auth.messages.invalid_confirmation_code');
+        if (is_null($userConfirmation)) {
+            return $this->invalidConfirmationCodeHandler();
         }
 
         $user = $userConfirmation->user;
+
+        // This should be only an exception in development mode.
+        if (is_null($user)) {
+            return $this->invalidConfirmationCodeHandler();
+        }
 
         $this->setConfirmStatus($user);
 
@@ -50,6 +54,8 @@ class UserConfirmHandler
         event(new UserConfirmedEvent($user));
 
         $this->loginUser($user);
+
+        flash()->success(trans('auth.messages.confirmation_success'));
 
         return redirect('/');
 	}
@@ -79,5 +85,15 @@ class UserConfirmHandler
     public function loginUser($user)
     {
         $this->auth->login($user);
+    }
+
+    /**
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function invalidConfirmationCodeHandler()
+    {
+        flash()->error(trans('auth.messages.invalid_confirmation_code'));
+
+        return redirect('/');
     }
 }

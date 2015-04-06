@@ -74,7 +74,8 @@ class AuthController extends Controller
 
         event(new UserRegistration($user));
 
-        return trans('auth.messages.account_created_waiting_for_confirmation');
-//        return redirect($this->redirectPath());
+        flash()->success(trans('auth.messages.account_created_waiting_for_confirmation'));
+
+        return redirect($this->redirectPath());
     }
 }

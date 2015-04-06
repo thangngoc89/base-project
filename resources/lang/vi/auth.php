@@ -2,9 +2,10 @@
 
 return [
     "messages" => [
-        "account_created"                           => "Tài khoản của bạn đã được khởi tạo thành công",
-        "account_created_waiting_for_confirmation"  => "Tài khoản của bạn đã được tạo thành công. Hãy nhấn vào link trong email để xác nhận tài khoản",
-        "invalid_confirmation_code"                 => "Mã xác nhận không hợp lệ",
+        "account_created"                           => "Tài khoản của bạn đã được tạo thành công",
+        "account_created_waiting_for_confirmation"  => "Tài khoản của bạn đã được tạo thành công. Hãy làm theo hướng dẫn trong email để kích hoạt tài khoản",
+        "invalid_confirmation_code"                 => "Mã xác nhận tài khoản không hợp lệ. Vui lòng kiểm tra lại mã xác nhận trong email",
+        "confirmation_success"                      => "Tài khoản của bạn đã được kích hoạt. Chào mừng đến ". setting('app_name')
     ],
 
     "emails" => [

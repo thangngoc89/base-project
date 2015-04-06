@@ -18,6 +18,9 @@
 </head>
 <body>
 <nav class="navbar navbar-default">
+
+    @include('vendor/flash/message')
+
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">

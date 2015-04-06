@@ -136,6 +136,7 @@ return [
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
         'Namest\Settings\SettingsServiceProvider',
+        'Laracasts\Flash\FlashServiceProvider',
 
 		/*
 		 * Application Service Providers...
@@ -195,7 +196,7 @@ return [
 		'Validator' => 'Illuminate\Support\Facades\Validator',
 		'View'      => 'Illuminate\Support\Facades\View',
         'Setting'   => 'Namest\Settings\Facades\Setting',
-
+        'Flash'     => 'Laracasts\Flash\Flash',
 	],
 
 ];
