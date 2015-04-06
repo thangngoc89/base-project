@@ -14,11 +14,13 @@ class DatabaseSeeder extends Seeder {
 	{
         DB::statement('SET FOREIGN_KEY_CHECKS=0');
         DB::statement('TRUNCATE TABLE users');
+        DB::statement('TRUNCATE TABLE settings');
         DB::statement('SET FOREIGN_KEY_CHECKS=0');
 
 		Model::unguard();
 
         $this->call('UserTableSeeder');
+        $this->call('SettingsTableSeeder');
 	}
 
 }
