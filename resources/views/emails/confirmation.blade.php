@@ -5,8 +5,8 @@
 
 <div>
     <p>Hi {{ $username }},</p>
-    Thanks for creating an account with the verification demo app.
+    Thanks for creating an account with {{ setting('app_name') }}.
     Please follow the link below to verify your email address<br/>
-    <a href="{{ url('auth/verify/' . $confirmation_code) }}">{{ url('auth/verify/' . $confirmation_code) }}</a><br/>
+    <a href="{{ route('register.verify', $confirmation_code) }}">{{ route('register.verify', $confirmation_code) }}</a><br/>
 </div>
 @endsection
