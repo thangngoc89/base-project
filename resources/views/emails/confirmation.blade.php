@@ -1,11 +1,11 @@
 @extends('emails.base_email')
 
 @section('body')
-<h2>{!! trans('auth.emails.confirmation.title') !!}</h2>
+<h2>{{ $title }}</h2>
 
 <div>
     {!! trans('auth.emails.confirmation.body', [
-            'username' => $username,
+            'username' => $user->username,
             'app_name' => setting('app_name'),
         ])
     !!}

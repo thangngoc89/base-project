@@ -2,25 +2,23 @@
 namespace App\Handlers\Events\Auth;
 
 use App\Events\Auth\UserRegistration as Events;
-
+use App\Library\Mailer\AuthMailer;
 use App\Models\UserConfirmation;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldBeQueued;
-use Illuminate\Contracts\Mail\Mailer;
 
 class SendConfirmationEmail implements ShouldBeQueued
 {
     /**
-     * @var Mailer
+     * @var AuthMailer
      */
     private $mail;
 
     /**
      * Create the event handler.
-     *
-     * @param Mailer $mail
+     * @param AuthMailer $mail
      */
-	public function __construct(Mailer $mail)
+	public function __construct(AuthMailer $mail)
 	{
         $this->mail = $mail;
     }
@@ -37,7 +35,7 @@ class SendConfirmationEmail implements ShouldBeQueued
 
         $confirmation_code = $this->createNewConfirmationCode($user);
 
-        $this->sendConfimationEmail($confirmation_code, $user);
+        $this->sendConfimationEmail($user, $confirmation_code);
     }
 
     /**
@@ -57,17 +55,9 @@ class SendConfirmationEmail implements ShouldBeQueued
      * @param $confirmation_code
      * @param $user
      */
-    public function sendConfimationEmail($confirmation_code, $user)
+    public function sendConfimationEmail($user,  $confirmation_code)
     {
-        $username = $user->username;
-        $data = compact('confirmation_code', 'username');
-
-        $this->mail->send('emails.confirmation', $data, function ($message) use ($user) {
-            $message->from(setting('app_email'), setting('admin_name'));
-
-            $message->to($user->email)
-                    ->subject(trans('auth.emails.confirmation.title'));
-        });
+        $this->mail->sendConfirmationEmail($user, $confirmation_code);
     }
 
 }

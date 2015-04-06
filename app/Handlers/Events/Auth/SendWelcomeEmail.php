@@ -3,7 +3,7 @@ namespace App\Handlers\Events\Auth;
 
 use App\Events\Auth\UserConfirmedEvent;
 
-use Illuminate\Contracts\Mail\Mailer;
+use App\Library\Mailer\AuthMailer as Mailer;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldBeQueued;
 
@@ -37,17 +37,12 @@ class SendWelcomeEmail implements ShouldBeQueued
         $this->sendWelcomeEmail($user);
 	}
 
+    /**
+     * @param $user
+     */
     public function sendWelcomeEmail($user)
     {
-        $username = $user->username;
-        $data = compact('username');
-
-        $this->mail->send('emails.welcome', $data, function ($message) use ($user) {
-            $message->from(setting('app_email'), setting('admin_name'));
-
-            $message->to($user->email)
-                    ->subject(trans('auth.emails.welcome.title'));
-        });
+        $this->mail->sendWelcomeEmail($user);
     }
 
 }
