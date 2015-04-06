@@ -12,7 +12,10 @@ function showRegisterForm(){
         $('.login-footer').fadeOut('fast',function(){
             $('.register-footer').fadeIn('fast');
         });
-        $('.modal-title').html('Register with');
+        
+        var register_with = $('.modal-title').data('register');
+
+        $('.modal-title').html(register_with);
     }); 
     $('.error').removeClass('alert alert-danger').html('');
        
@@ -23,8 +26,10 @@ function showLoginForm(){
         $('.register-footer').fadeOut('fast',function(){
             $('.login-footer').fadeIn('fast');    
         });
-        
-        $('.modal-title').html('Login with');
+
+        var login_with = $('.modal-title').data('login');
+
+        $('.modal-title').html(login_with);
     });       
      $('.error').removeClass('alert alert-danger').html(''); 
 }

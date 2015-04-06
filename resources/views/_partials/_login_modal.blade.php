@@ -3,7 +3,8 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">Login with</h4>
+                <h4 class="modal-title" data-register="{{ trans('auth.register_with') }}" data-login="{{ trans('auth.login_with') }}">
+                    {{ trans('auth.login_with') }}</h4>
             </div>
             <div class="modal-body">
                 <div class="box">
@@ -27,9 +28,9 @@
                         <div class="error"></div>
                         <div class="form loginBox">
                             <form method="post" action="/login" accept-charset="UTF-8">
-                                <input id="email" class="form-control" type="text" placeholder="Email" name="email">
-                                <input id="password" class="form-control" type="password" placeholder="Password" name="password">
-                                <input class="btn btn-default btn-login" type="button" value="Login" onclick="loginAjax()">
+                                <input id="email" class="form-control" type="text" placeholder="{{ trans('auth.email_address') }}" name="email">
+                                <input id="password" class="form-control" type="password" placeholder="{{ trans('auth.password') }}" name="password">
+                                <input class="btn btn-default btn-login" type="button" value="{{ trans('auth.login') }}" onclick="loginAjax()">
                             </form>
                         </div>
                     </div>
@@ -38,10 +39,10 @@
                     <div class="content registerBox" style="display:none;">
                         <div class="form">
                             <form method="post" html="{:multipart=>true}" data-remote="true" action="/register" accept-charset="UTF-8">
-                                <input id="email" class="form-control" type="text" placeholder="Email" name="email">
-                                <input id="password" class="form-control" type="password" placeholder="Password" name="password">
-                                <input id="password_confirmation" class="form-control" type="password" placeholder="Repeat Password" name="password_confirmation">
-                                <input class="btn btn-default btn-register" type="submit" value="Create account" name="commit">
+                                <input id="email" class="form-control" type="text" placeholder="{{ trans('auth.email_address') }}" name="email">
+                                <input id="password" class="form-control" type="password" placeholder="{{ trans('auth.password') }}" name="password">
+                                <input id="password_confirmation" class="form-control" type="password" placeholder="{{ trans('auth.password_confirm') }}" name="password_confirmation">
+                                <input class="btn btn-default btn-register" type="submit" value="{{ trans('auth.create_account') }}" name="commit">
                             </form>
                         </div>
                     </div>
@@ -49,11 +50,11 @@
             </div>
             <div class="modal-footer">
                 <div class="forgot login-footer">
-                    <span>Looking to  <a href="javascript: showRegisterForm();">create an account</a>?</span>
+                    <span><a href="javascript: showRegisterForm();">{{ trans('auth.create_an_account') }}</a>?</span>
                 </div>
                 <div class="forgot register-footer" style="display:none">
-                    <span>Already have an account?</span>
-                    <a href="javascript: showLoginForm();">Login</a>
+                    <span>{{ trans('auth.already_have_an_account') }}</span>
+                    <a href="javascript: showLoginForm();">{{ trans('auth.login') }}</a>
                 </div>
             </div>
         </div>

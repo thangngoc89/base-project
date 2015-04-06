@@ -22,11 +22,17 @@ return [
     ],
 
     'login'             => 'Đăng nhập',
+    'login_with'        => 'Đăng nhập bằng',
     'register'          => 'Đăng kí',
+    'register_with'     => 'Đăng kí bằng',
     'logout'            => 'Đăng xuất',
     'remember'          => 'Ghi nhớ đăng nhập',
     'email_address'     => 'Email',
     'password'          => 'Mật khẩu',
+    'password_confirm'  => 'Nhập lại mật khẩu',
     'forgot_your_password' => 'Quên mật khẩu?',
+    'already_have_an_account' => 'Đã có tài khoản?',
+    'create_an_account' => 'Tạo tài khoản mới',
+    'create_account'    => 'Tạo tài khoản',
 
 ];
