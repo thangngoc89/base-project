@@ -14,6 +14,12 @@ class Registrar implements RegistrarContract {
 	 */
 	public function validator(array $data)
 	{
+        // Sanitize email
+        if (isset($data['email']))
+        {
+            $data['email'] = strtolower(trim($data['email']));
+        }
+
 		return Validator::make($data, [
 			'name' => 'required|max:255',
             'username' => 'required|alpha_num|max:20|unique:users',
