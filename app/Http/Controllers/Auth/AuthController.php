@@ -74,8 +74,7 @@ class AuthController extends Controller
 
         event(new UserRegistration($user));
 
-//        $this->auth->login($this->registrar->create($request->all()));
-        return 'Your account have been created. Please check your email for confirmation!';
+        return trans('auth.messages.account_created_waiting_for_confirmation');
 //        return redirect($this->redirectPath());
     }
 }

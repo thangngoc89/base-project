@@ -38,7 +38,7 @@ class UserConfirmHandler
 
         if (is_null($userConfirmation))
         {
-            return 'Invalid Confimation Code';
+            return trans('auth.messages.invalid_confirmation_code');
         }
 
         $user = $userConfirmation->user;
