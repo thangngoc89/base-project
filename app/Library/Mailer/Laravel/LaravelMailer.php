@@ -24,24 +24,24 @@ class LaravelMailer implements Mailer
     /**
      * Send Email To User
      *
-     * @param AuthenticatableContract $user
+     * @param string $email_address
      * @param string $title
      * @param array $data
      * @param string $template
      * @param null $senderEmail
      * @param null $senderName
      */
-    public function sendTo(AuthenticatableContract $user, $title, $data = [], $template, $senderEmail = null, $senderName = null)
+    public function sendTo($email_address, $title, $data = [], $template, $senderEmail = null, $senderName = null)
     {
         $senderEmail = ($senderEmail) ?: setting('app_email');
         $senderName = ($senderName) ?: setting('admin_name');
 
         $data = $this->pushTitleIntoData($title, $data);
 
-        $this->mail->send($template, $data, function ($message) use ($user, $senderEmail, $senderName, $title) {
+        $this->mail->send($template, $data, function ($message) use ($email_address, $senderEmail, $senderName, $title) {
             $message->from($senderEmail, $senderName);
 
-            $message->to($user->email)
+            $message->to($email_address)
                 ->subject($title);
         });
     }

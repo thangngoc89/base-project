@@ -16,7 +16,7 @@ class LaravelAuthMailer extends LaravelMailer implements AuthMailer
 
         $data = compact('user', 'confirmation_code');
 
-        $this->sendTo($user, $title, $data, 'emails.confirmation');
+        $this->sendTo($user->email, $title, $data, 'emails.confirmation');
     }
 
     /**
@@ -29,6 +29,6 @@ class LaravelAuthMailer extends LaravelMailer implements AuthMailer
 
         $data = compact('user');
 
-        $this->sendTo($user, $title, $data, 'emails.welcome');
+        $this->sendTo($user->email, $title, $data, 'emails.welcome');
     }
 }

@@ -41,13 +41,4 @@ class User extends UuidModel implements AuthenticatableContract, CanResetPasswor
     {
         return $this->hasOne(\App\Models\UserConfirmation::class);
     }
-
-    /**
-     * Email mutator
-     * @param $value
-     */
-    public function setEmailAttribute($value)
-    {
-        $this->email = strtolower(trim($value));
-    }
 }

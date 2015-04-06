@@ -38,7 +38,10 @@
                 <div class="box">
                     <div class="content registerBox" style="display:none;">
                         <div class="form">
-                            <form method="post" html="{:multipart=>true}" data-remote="true" action="/register" accept-charset="UTF-8">
+                            <form method="post" html="{:multipart=>true}" data-remote="true" action="{{ url('/auth/register') }}" accept-charset="UTF-8">
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                <input id="username" class="form-control" type="text" placeholder="{{ trans('app.username') }}" name="username">
+                                <input id="name" class="form-control" type="text" placeholder="{{ trans('app.name') }}" name="name">
                                 <input id="email" class="form-control" type="text" placeholder="{{ trans('auth.email_address') }}" name="email">
                                 <input id="password" class="form-control" type="password" placeholder="{{ trans('auth.password') }}" name="password">
                                 <input id="password_confirmation" class="form-control" type="password" placeholder="{{ trans('auth.password_confirm') }}" name="password_confirmation">
