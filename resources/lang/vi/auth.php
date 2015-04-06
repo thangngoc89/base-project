@@ -20,4 +20,13 @@ return [
             "body"  => "<p>:username đã hoàn tất quá trình đăng kí tại ". setting('app_name'). "</p>",
         ],
     ],
+
+    'login'             => 'Đăng nhập',
+    'register'          => 'Đăng kí',
+    'logout'            => 'Đăng xuất',
+    'remember'          => 'Ghi nhớ đăng nhập',
+    'email_address'     => 'Email',
+    'password'          => 'Mật khẩu',
+    'forgot_your_password' => 'Quên mật khẩu?',
+
 ];

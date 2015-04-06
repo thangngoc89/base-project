@@ -1,0 +1,106 @@
+.footer {
+  background-color: #444444;
+}
+
+@media (min-width: 991px) {
+  .footer {
+    background-size: 100%;
+  };
+}
+
+@media (max-width: 1280px) {
+  .footer {
+    background-position: 0 50px;
+  };
+}
+
+.footer .heart {
+  color: #F74933;
+}
+
+.footer .overlayer {
+  background-color: rgba(27,27,27,0.7);
+}
+
+.footer .subscribers {
+  color: #999;
+  font-weight: 200;
+}
+
+.footer .numbers-dont-lie {
+  color: #FFFFFF;
+  font-weight: 200;
+}
+
+.footer .numbers-dont-lie b {
+  font-weight: 400;
+}
+
+.footer .overlayer>.container {
+  color: #999999;
+  padding-bottom: 30px;
+  padding-top: 30px;
+}
+
+.footer .support {
+  padding: 0 0 30px;
+}
+
+.footer li a,.footer li,.footer p {
+  color: #FFFFFF;
+  margin: 5px 0;
+}
+
+.footer .social-list li {
+  color: #FFFFFF;
+  margin: 15px 0;
+}
+
+.footer a:hover {
+  color: #999;
+}
+
+.footer .blue-link {
+  color: #00bbff;
+}
+
+.footer .blue-link:hover {
+  color: #00A0DE;
+}
+
+.footer .credits {
+  border-top: 1px solid #555555;
+  padding: 25px 0 15px;
+  text-align: center;
+}
+
+.footer .form-control {
+  border-radius: 3px;
+  background-color: #fff;
+  box-shadow: 0 1px 0px 0px rgba(0,0,0,0.09) inset;
+  color: #FFFFFF;
+}
+
+.footer .form-control:hover {
+  background-color: rgba(255,255,255,0.92);
+}
+
+.footer .form-control:focus {
+  box-shadow: 0 1px 0 0 rgba(0,0,0,0.04) inset;
+  background-color: rgba(255,255,255,0.85);
+  color: #333333;
+}
+
+.footer input[type="email"] {
+  border-radius: 3px;
+  border: none;
+  color: #333333;
+  font-size: 16px;
+  height: 38px;
+  padding: 3px 12px;
+  width: 100%;
+}
+
+.footer .btn-subscribe {
+  margin: 0 auto;
+}
