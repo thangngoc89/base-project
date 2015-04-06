@@ -64,7 +64,9 @@ class SendConfirmationEmail implements ShouldBeQueued
 
         $this->mail->send('emails.confirmation', $data, function ($message) use ($user) {
             $message->from(setting('app_email'), setting('admin_name'));
-            $message->to($user->email)->subject('Confirm Your Email Address');;
+
+            $message->to($user->email)
+                    ->subject(trans('auth.emails.confirmation.title'));
         });
     }
 
