@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9cdd48198547beb2f9d1d68064d9dc05",
+    "hash": "7f9b6b5ad21ff84bdbd2d3345a965d07",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -829,6 +829,47 @@
                 "schedule"
             ],
             "time": "2015-01-11 23:07:46"
+        },
+        {
+            "name": "namest/settings",
+            "version": "v0.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/luuhoangnam/settings.git",
+                "reference": "a6f2b1f76b5b90deae4dff4ed254439db4471bb4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/luuhoangnam/settings/zipball/a6f2b1f76b5b90deae4dff4ed254439db4471bb4",
+                "reference": "a6f2b1f76b5b90deae4dff4ed254439db4471bb4",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/database": "~5.0",
+                "illuminate/support": "~5.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "~0.9",
+                "phpunit/phpunit": "~4.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Namest\\Settings\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Luu Hoang Nam",
+                    "email": "hoangnam0705@icloud.com",
+                    "homepage": "http://luuhoangnam.com"
+                }
+            ],
+            "time": "2015-03-02 00:49:53"
         },
         {
             "name": "nesbot/carbon",

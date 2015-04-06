@@ -43,9 +43,8 @@ class SendWelcomeEmail implements ShouldBeQueued
         $data = compact('username');
 
         $this->mail->send('emails.welcome', $data, function ($message) use ($user) {
-            //TODO: Change this to a app's setting
-            $message->from('hi@example.com', 'Khoa Nguyen');
-            $message->to($user->email)->subject('Welcome to website name');
+            $message->from(setting('app_email'), setting('admin_name'));
+            $message->to($user->email)->subject('Welcome to '. setting('app_name'));
         });
     }
 

@@ -9,5 +9,4 @@ class UserTableSeeder extends Seeder
     {
          TestDummy::times(20)->create('App\Models\User');
     }
-
 }
