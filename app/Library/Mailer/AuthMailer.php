@@ -12,4 +12,9 @@ interface AuthMailer extends Mailer
      */
     public function sendConfirmationEmail($user, $confirmation_code);
 
+    /**
+     * @param $user
+     * @return mixed
+     */
+    public function sendWelcomeEmail($user);
 }
