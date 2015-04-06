@@ -55,7 +55,8 @@ class UserConfirmHandler
 	}
 
     /**
-     * @param $userConfirmation
+     * @param $user
+     * @internal param $userConfirmation
      */
     public function setConfirmStatus($user)
     {
