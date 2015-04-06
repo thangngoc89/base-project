@@ -1,6 +1,8 @@
 <?php
 namespace App\Library\Mailer;
 
+use App\Library\Mailer\Mailer;
+
 interface AuthMailer extends Mailer
 {
     /**

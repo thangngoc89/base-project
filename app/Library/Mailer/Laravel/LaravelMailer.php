@@ -2,7 +2,6 @@
 namespace App\Library\Mailer\Laravel;
 
 use Illuminate\Contracts\Mail\Mailer as IlluminateMailer;
-use Illuminate\Foundation\Application as App;
 use App\Library\Mailer\Mailer;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 
@@ -18,8 +17,7 @@ class LaravelMailer implements Mailer
      */
     public function __construct()
     {
-        $app = new App;
-        $mail = $app->make(IlluminateMailer::class);
+        $mail = app(IlluminateMailer::class);
         $this->mail = $mail;
     }
 

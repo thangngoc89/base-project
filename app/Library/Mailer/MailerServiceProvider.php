@@ -26,10 +26,10 @@ class MailerServiceProvider extends ServiceProvider
 	 */
 	public function register()
 	{
-		$this->app->bind(
-            Mailer::class,
-			Laravel\LaravelMailer::class
-		);
+//		$this->app->bind(
+//            Mailer::class,
+//			Laravel\LaravelMailer::class
+//		);
 
         $this->app->bind(
             AuthMailer::class,
