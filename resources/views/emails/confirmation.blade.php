@@ -1,9 +1,6 @@
-<!DOCTYPE html>
-<html lang="en-US">
-<head>
-    <meta charset="utf-8">
-</head>
-<body>
+@extends('emails.base_email')
+
+@section('body')
 <h2>Verify Your Email Address</h2>
 
 <div>
@@ -12,6 +9,4 @@
     Please follow the link below to verify your email address<br/>
     <a href="{{ url('auth/verify/' . $confirmation_code) }}">{{ url('auth/verify/' . $confirmation_code) }}</a><br/>
 </div>
-
-</body>
-</html>
+@endsection

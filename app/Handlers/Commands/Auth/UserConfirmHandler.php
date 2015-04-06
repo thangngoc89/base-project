@@ -1,12 +1,14 @@
-<?php namespace App\Handlers\Commands\Auth;
+<?php
+namespace App\Handlers\Commands\Auth;
 
 use App\Commands\Auth\UserConfirm;
-
+use App\Events\Auth\UserConfirmedEvent;
 use App\Models\UserConfirmation;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Queue\InteractsWithQueue;
 
-class UserConfirmHandler {
+class UserConfirmHandler
+{
     /**
      * @var Guard
      */
@@ -43,7 +45,9 @@ class UserConfirmHandler {
 
         $this->setConfirmStatus($user);
 
-        $this->deleteOldConfirmationCode($userConfirmation);
+        $this->deleteUsedConfirmationCode($userConfirmation);
+
+        event(new UserConfirmedEvent($user));
 
         $this->loginUser($user);
 
@@ -63,7 +67,7 @@ class UserConfirmHandler {
     /**
      * @param $userConfirmation
      */
-    public function deleteOldConfirmationCode($userConfirmation)
+    public function deleteUsedConfirmationCode($userConfirmation)
     {
         $userConfirmation->delete();
     }
@@ -75,5 +79,4 @@ class UserConfirmHandler {
     {
         $this->auth->login($user);
     }
-
 }

@@ -17,6 +17,9 @@ class EventServiceProvider extends ServiceProvider {
         \App\Events\Auth\UserRegistration::class => [
             \App\Handlers\Events\Auth\SendConfirmationEmail::class,
         ],
+        \App\Events\Auth\UserConfirmedEvent::class => [
+            \App\Handlers\Events\Auth\SendWelcomeEmail::class
+        ],
 	];
 
 	/**
