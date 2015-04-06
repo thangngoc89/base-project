@@ -5,7 +5,8 @@ return [
         "account_created"                           => "Tài khoản của bạn đã được tạo thành công",
         "account_created_waiting_for_confirmation"  => "Tài khoản của bạn đã được tạo thành công. Hãy làm theo hướng dẫn trong email để kích hoạt tài khoản",
         "invalid_confirmation_code"                 => "Mã xác nhận tài khoản không hợp lệ. Vui lòng kiểm tra lại mã xác nhận trong email",
-        "confirmation_success"                      => "Tài khoản của bạn đã được kích hoạt. Chào mừng đến ". setting('app_name')
+        "confirmation_success"                      => "Tài khoản của bạn đã được kích hoạt. Chào mừng đến ". setting('app_name'),
+        "login_success"                             => "Đăng nhập thành công. Chào mừng đến với ". setting('app_name'),
     ],
 
     "emails" => [

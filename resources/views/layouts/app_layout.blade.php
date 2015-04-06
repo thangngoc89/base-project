@@ -69,7 +69,7 @@
 @endif
 <!-- Scripts -->
 <script src="{{ elixir('js/vendor.js') }}"></script>
-{{--<script src="{{ elixir('js/script.js') }}"></script>--}}
+<script src="{{ elixir('js/script.js') }}"></script>
 @yield('footer')
 @include('_partials._footer')
 </body>

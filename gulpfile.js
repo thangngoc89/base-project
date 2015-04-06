@@ -25,5 +25,8 @@ elixir(function(mix) {
             "resources/js/vendor/get-shit-done/custom.js",
             "resources/js/vendor/get-shit-done/login-register.js",
         ], "public/js/vendor.js", 'resources/js')
-        .version(["js/vendor.js", "css/app.css"]);
+        .scripts([
+            "resources/js/app/alert.js",
+        ], "public/js/script.js", 'resources/js')
+        .version(["js/vendor.js", "css/app.css", "js/script.js"]);
 });

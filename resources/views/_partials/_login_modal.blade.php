@@ -27,10 +27,13 @@
                         </div>
                         <div class="error"></div>
                         <div class="form loginBox">
-                            <form method="post" action="/login" accept-charset="UTF-8">
+                            <form method="post" action="{{ url('/auth/login') }}" accept-charset="UTF-8">
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                 <input id="email" class="form-control" type="text" placeholder="{{ trans('auth.email_address') }}" name="email">
                                 <input id="password" class="form-control" type="password" placeholder="{{ trans('auth.password') }}" name="password">
-                                <input class="btn btn-default btn-login" type="button" value="{{ trans('auth.login') }}" onclick="loginAjax()">
+                                <input class="btn btn-default btn-login" type="submit" value="{{ trans('auth.login') }}">
+                                {{--TODO: Active login ajax--}}
+                                {{--onclick="loginAjax()"--}}
                             </form>
                         </div>
                     </div>
