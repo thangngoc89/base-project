@@ -1,0 +1,19 @@
+{
+  "name": "thangngoc89.base.project",
+  "version": "0.1.0",
+  "homepage": "http://khoanguyen.me",
+  "authors": [
+    "Khoa Nguyen <hi@khoanguyen.me>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass": "~3.3.3"
+  }
+}

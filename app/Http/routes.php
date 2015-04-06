@@ -11,9 +11,10 @@
 |
 */
 
-Route::get('/', 'WelcomeController@index');
-
-Route::get('home', 'HomeController@index');
+Route::get('/', [
+    'as' => 'home',
+    'uses' => 'HomeController@index',
+]);
 
 Route::group(['prefix' => 'auth'], function(){
    Route::get('verify/{code}', [
