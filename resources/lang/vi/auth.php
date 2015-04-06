@@ -17,7 +17,7 @@ return [
         
         "welcome" => [
             "title" => "Chào mừng đến với ". setting('app_name'),
-            "body"  => "<p>:username đã hoàn tất quá trình đăng kí tại". setting('app_username'). "</p>",
+            "body"  => "<p>:username đã hoàn tất quá trình đăng kí tại ". setting('app_name'). "</p>",
         ],
     ],
 ];
